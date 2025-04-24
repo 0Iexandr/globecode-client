@@ -58,7 +58,7 @@ const Search = ({ categories }) => {
                     className="flex gap-4 items-start p-4 rounded-lg transition duration-300 hover:shadow-lg hover:bg-gray-100 dark:hover:bg-gray-900 border shadow-sm"
                   >
                     <img
-                      src={`http://localhost:1337${image.url}`}
+                      src={image.url}
                       alt={title}
                       className="w-32 h-24 object-cover rounded-lg"
                     />

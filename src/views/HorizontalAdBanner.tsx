@@ -4,7 +4,7 @@ const HorizontalAdBanner = ({ image, url }) => {
       <div className="container">
         <a href={url} target="_blank" rel="noreferrer">
           <img
-            src={`http://localhost:1337${image}`}
+            src={image}
             alt="advertisement"
             className="w-full max-h-36 border-gray-400 border-[1px] object-cover"
           />

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:1337/api';
+const BASE_URL = 'https://uplifting-cats-c168e828d2.strapiapp.com/api';
 
 const apiData = axios.create({
   baseURL: BASE_URL,

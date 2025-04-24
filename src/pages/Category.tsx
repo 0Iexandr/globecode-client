@@ -63,7 +63,7 @@ const Category = () => {
           <div className="lg:col-span-7">
             <div className="relative vignette-container">
               <img
-                src={`http://localhost:1337${category.image.url}`}
+                src={category.image.url}
                 alt={category.name}
                 className="w-full object-cover rounded mb-6"
               />
@@ -82,7 +82,7 @@ const Category = () => {
                   className="flex gap-4 items-start p-4 rounded-lg transition duration-300 hover:shadow-lg hover:bg-gray-100 dark:hover:bg-gray-900"
                 >
                   <img
-                    src={`http://localhost:1337${image.url}`}
+                    src={image.url}
                     alt={title}
                     className="w-32 h-24 object-cover rounded-lg"
                   />
@@ -129,7 +129,7 @@ const Category = () => {
                         </p>
                       </div>
                       <img
-                        src={`http://localhost:1337${image.url}`}
+                        src={image.url}
                         alt={title}
                         className="w-16 h-16 object-cover rounded"
                       />

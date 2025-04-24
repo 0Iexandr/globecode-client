@@ -44,7 +44,7 @@ const Hero = () => {
           >
             <div className="w-full h-96 overflow-hidden rounded-lg">
               <img
-                src={`http://localhost:1337${popularPosts[0].image.url}`}
+                src={popularPosts[0].image.url}
                 alt={popularPosts[0].title}
                 className="w-full h-full object-cover transform group-hover:scale-105 transition duration-300"
               />
@@ -72,7 +72,7 @@ const Hero = () => {
                   className="flex gap-4 items-start p-4 rounded-lg transition duration-300 hover:shadow-lg hover:bg-gray-100 dark:hover:bg-gray-900"
                 >
                   <img
-                    src={`http://localhost:1337${image.url}`}
+                    src={image.url}
                     alt={title}
                     className="w-32 h-24 object-cover rounded-lg"
                   />

@@ -13,7 +13,7 @@ import AdList from '../components/AdList';
 import InfinitePost from '../components/InfinitePost';
 import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:1337');
+const socket = io('https://uplifting-cats-c168e828d2.strapiapp.com');
 
 const Post = () => {
   const [post, setPost] = useState({});
@@ -114,7 +114,7 @@ const Post = () => {
             <div className="flex justify-between items-center border-t border-b border-gray-300 py-4 my-4 flex-wrap">
               <div className="flex items-center gap-2">
                 <img
-                  src={`http://localhost:1337${post.author.avatar.url}`}
+                  src={post.author.avatar.url}
                   alt={post.author.name}
                   className="rounded-full w-8 h-8"
                 />
@@ -144,7 +144,7 @@ const Post = () => {
             />
             <AdList ads={post.ads} />
             <img
-              src={`http://localhost:1337${post.image.url}`}
+              src={post.image.url}
               alt={post.title}
               className="w-full object-cover rounded mb-6"
             />
@@ -160,7 +160,7 @@ const Post = () => {
                   />
                   <AdList ads={ads} />
                   <img
-                    src={`http://localhost:1337${image.url}`}
+                    src={image.url}
                     alt={subtitle}
                     className="w-full object-cover rounded"
                   />
@@ -180,7 +180,7 @@ const Post = () => {
                 rel="noreferrer"
               >
                 <img
-                  src={`http://localhost:1337${post.secondAdBanner.image.url}`}
+                  src={post.secondAdBanner.image.url}
                   alt="advertisement"
                   className="w-full border-gray-400 border-[1px]"
                 />
@@ -210,7 +210,7 @@ const Post = () => {
                         </p>
                       </div>
                       <img
-                        src={`http://localhost:1337${image.url}`}
+                        src={image.url}
                         alt={title}
                         className="w-16 h-16 object-cover rounded"
                       />

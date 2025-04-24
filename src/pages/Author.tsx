@@ -51,7 +51,7 @@ const Author = () => {
           <div className="container">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <img
-                src={`http://localhost:1337${author.avatar.url}`}
+                src={author.avatar.url}
                 alt={author.name}
                 className="rounded-full max-w-52 max-h-52 border-[30px] border-white"
               />
@@ -74,7 +74,7 @@ const Author = () => {
               className="flex gap-4 items-start p-4 rounded-lg transition duration-300 hover:shadow-lg hover:bg-gray-100 dark:hover:bg-gray-900"
             >
               <img
-                src={`http://localhost:1337${image.url}`}
+                src={image.url}
                 alt={title}
                 className="w-32 h-24 object-cover rounded-lg"
               />

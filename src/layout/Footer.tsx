@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Logo from '../components/Logo';
 import Socials from '../components/Socials';
-import NavBar from '../components/NavBAr';
+import NavBar from '../components/NavBar';
 import { Link } from 'react-router-dom';
 
 interface Category {

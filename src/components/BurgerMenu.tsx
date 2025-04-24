@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { close } from '../utils/Icons';
 
-import NavBar from './NavBAr';
+import NavBar from './NavBar';
 import Logo from './Logo';
 import Socials from './Socials';
 

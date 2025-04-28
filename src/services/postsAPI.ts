@@ -73,7 +73,7 @@ export const getPostsByAuthor = async (
 
 export const getSearchedPosts = async (query, page = 1, pageSize = 10) => {
   const posts = await apiData.get(
-    `/posts?filters[title][$contains]=${query}&pagination[page]=${page}&pagination[pageSize]=${pageSize}&populate=*`,
+    `/posts?filters[title][$containsi]=${query}&pagination[page]=${page}&pagination[pageSize]=${pageSize}&populate=*`,
   );
   return posts.data;
 };

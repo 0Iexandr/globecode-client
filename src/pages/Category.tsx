@@ -11,6 +11,9 @@ import Page404 from './Page404';
 import Pagination from '../components/Pagination';
 import Disclaimer from '../views/Disclaimer';
 import RenderDescription from '../components/RenderDescription';
+import { io } from 'socket.io-client';
+
+const socket = io('https://uplifting-cats-c168e828d2.strapiapp.com');
 
 const Category = () => {
   const [category, setCategory] = useState({});
@@ -22,6 +25,25 @@ const Category = () => {
   const { pathname } = useLocation();
   const categoryId = pathname.split('/').pop();
   const pageSize = 10;
+
+  const [activeUsers, setActiveUsers] = useState({});
+
+  useEffect(() => {
+    socket.on('updateAllActiveUsers', data => {
+      setActiveUsers(data);
+    });
+    socket.on('updateActiveUsers', ({ postId, count }) => {
+      setActiveUsers(prev => ({
+        ...prev,
+        [postId]: count,
+      }));
+    });
+
+    return () => {
+      socket.off('updateAllActiveUsers');
+      socket.off('updateActiveUsers');
+    };
+  }, [categoryId]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,6 +77,8 @@ const Category = () => {
   if (!category || Object.keys(category).length === 0) {
     return <Page404 />;
   }
+
+  const getReadingCount = postId => activeUsers[postId] || 0;
 
   return (
     <div>
@@ -126,6 +150,9 @@ const Category = () => {
                         </h4>
                         <p className="section__title text-sm text-green-600 dark:text-green-600">
                           {category.name}
+                        </p>
+                        <p className="text-sm text-gray-600 dark:text-slate-200">
+                          {getReadingCount(documentId)} reading now
                         </p>
                       </div>
                       <img
